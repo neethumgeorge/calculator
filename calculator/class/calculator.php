@@ -1,4 +1,14 @@
 <?php 
+/**
+ * Calculator.
+ *
+ * This class is for handling all the calculations
+ *
+ * @author     brainstorming
+ *
+ * @version    June2017
+ */
+
 require_once('interface.php');
 class Calculator
 {
