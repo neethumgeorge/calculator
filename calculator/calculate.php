@@ -1,24 +1,29 @@
 <?php
-require_once('inc/config.php');
-require_once('class/calculator.php');
-switch ($_POST['opt']) {
+
+require_once('web/config.php');
+require_once('Controller/calculator.php');
+require_once('Controller/AdditionController.php');
+require_once('Controller/SubtractionController.php');
+require_once('Controller/MultiplicationController.php');
+require_once('Controller/DivisionController.php');
+
+
+switch ($_POST['operation']) {
     case "add":
-       $Operation = 'Addition';
+        $controller = 'AdditionController';
         break;
     case "sub":
-       $Operation = 'Subtraction';
+        $controller = 'SubtractionController';
         break;
     case "mul":
-        $Operation = 'Multiply';
+        $controller = 'MultiplicationController';
         break;
-	case "div":
-       $Operation = 'Division';
+    case "div":
+        $controller = 'DivisionController';
         break;
 }
 $calculator = new Calculator;
-$calculator->Operands($_POST['val_a'],$_POST['val_b']);
-
-$calculator->Operation(new $Operation);
+$calculator->Operands($_POST['val_a'], $_POST['val_b']);
+$calculator->Operation(new $controller);
 echo $calculator->process();
 
-?>

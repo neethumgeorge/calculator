@@ -42,7 +42,7 @@
 .bootstrap-frm input[type="text"], .bootstrap-frm input[type="email"], .bootstrap-frm textarea, .bootstrap-frm select{
     border: 1px solid #CCC;
     color: #888;
-    height: 20px;
+    height: 30px;
     line-height:15px;
     margin-bottom: 16px;
     margin-right: 6px;
