@@ -7,7 +7,7 @@
     <form id="calc_form" class="bootstrap-frm" method="post" enctype="multipart/form-data">
         <h1>Calculator </h1>
         <label>
-            <span> Input 1</span>
+            <span>Input 1</span>
             <input type="text" name="val_a" id="vala" placeholder="INPUT 1">
         </label>
         <label>

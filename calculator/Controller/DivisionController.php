@@ -1,6 +1,5 @@
 <?php
 
-
 /**
  * Division Controller
  *
@@ -10,7 +9,6 @@
  *
  * @version    June2017
  */
-
 class DivisionController implements Operations
 {
 
@@ -18,6 +16,7 @@ class DivisionController implements Operations
     {
         $dal = new DAL();
         $sql = "SELECT DIV_FN('$val1','$val2')";
+
         return $result = $dal->query($sql);
     }
 }

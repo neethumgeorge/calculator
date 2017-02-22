@@ -17,6 +17,7 @@ class SubtractionController implements Operations
     {
         $dal = new DAL();
         $sql = "SELECT SUB_FN('$val1','$val2')";
+        
         return $result = $dal->query($sql);
     }
 }

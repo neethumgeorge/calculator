@@ -25,5 +25,6 @@ switch ($_POST['operation']) {
 $calculator = new Calculator;
 $calculator->Operands($_POST['val_a'], $_POST['val_b']);
 $calculator->Operation(new $controller);
+
 echo $calculator->process();
 

@@ -18,6 +18,7 @@ class MultiplicationController implements Operations
     {
         $dal = new DAL();
         $sql = "SELECT MUL_FN('$val1','$val2')";
+        
         return $result = $dal->query($sql);
     }
 }
