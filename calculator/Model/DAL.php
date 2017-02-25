@@ -1,5 +1,4 @@
 <?php
-
 class DAL
 {
 
@@ -7,41 +6,29 @@ class DAL
     {
         
     }
-
-    private function dbconnect()
+	
+    public function api($fn,$val1,$val2)
     {
-        $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD)
-            or die("<br/>Could not connect to MySQL server");
+	
+		$endpoint = '';
+		$url = $endpoint."?fn=$fn&val1=$val1&val2=$val2";
 
-        mysqli_select_db($conn, DB_DB)
-            or die("<br/>Could not select the indicated database");
+		$ch = curl_init($url);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+		$result = curl_exec($ch);
+		$httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+		curl_close($ch);
+		
+		if ($httpCode == 200) {
+			$arr = json_decode($result,true);
+			foreach($arr as $key=>$value);
+			return $value;
+		} else {
+			error_log("HTTP_FAIL_$httpCode");
+		}
 
-        return $conn;
-    }
-
-    public function query($sql)
-    {
-
-        $conn = $this->dbconnect();
-
-        $res = mysqli_query($conn, $sql);
-        if ($res === FALSE) {
-            die(mysqli_error($conn));
-        } else {
-            $row = mysqli_fetch_row($res);
-            return $row[0];
-        }
-        //  $row = mysql_fetch_array($results);
-        /*  $results = array();
-
-          while ($row = mysql_fetch_array($res)){
-
-          foreach ($row as $k=>$v){
-          $result->$k = $v;
-          }
-
-          $results[] = $result;
-          }
-          return $results; */
-    }
+	}
+	
 }
+
+?>

@@ -17,26 +17,7 @@ class AdditionController implements Operations
     {
         $dal = new DAL();
 
-        $sql = "SELECT ADD_FN('$val1','$val2')";
-        return $result = $dal->query($sql);
+        return $result = $dal->api('ADD_FN','$val1','$val2');
 
-
-        //print_r($result); 
-        /* 	 $mysqli = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_DB);
-
-
-          if (mysqli_connect_errno()) {
-          printf("Connect failed: %s\n", mysqli_connect_error());
-          exit();
-          } */
-        /* $param1 = 1;
-          $param2 = 1;
-          $stmt = $mysqli->prepare('CALL ADD(:param1, :param2)');
-          $stmt->execute(array(':param1' => $param1, ':param2' => $param2));
-          // you have to read the result set here
-          while ($row = $result1->fetch_assoc()) {
-          printf("%d\n", $row['id']);
-          }
-         */
     }
 }
