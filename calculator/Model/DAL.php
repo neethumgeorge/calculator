@@ -24,7 +24,7 @@ class DAL
 			foreach($arr as $key=>$value);
 			return $value;
 		} else {
-			error_log("HTTP_FAIL_$httpCode");
+			error_log("HTTP_FAIL_$httpCode", 3, "error_log.log");
 		}
 
 	}
