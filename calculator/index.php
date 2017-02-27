@@ -34,4 +34,11 @@
 
 <!-- custom script included here -->
 <script src="web/assets/custom/js/function.js" type="text/javascript"></script>
+<script>
+    $(document).ready(function(){
+        calcOp = new calculatorClass();
+        calcOp.clickOperators();
+    });
+    
+</script>
 <!-- custom script ends here -->

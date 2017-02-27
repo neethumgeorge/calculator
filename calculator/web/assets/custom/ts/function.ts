@@ -1,33 +1,34 @@
-var calculatorClass = (function () {
+class calculatorClass {
     /**
-     * constructor
+     * constructor 
      */
-    function calculatorClass() {
+    constructor() {
         this.clickOperators();
     }
+    
     /**
      * operator cick action
      */
-    calculatorClass.prototype.clickOperators = function () {
+    public clickOperators(){
         $(".btn").off('click');
         $(".btn").click(function (e) {
             e.preventDefault();
-            var data = $(this).data('opt');
+            let data = $(this).data('opt');
             $("#operation").val(data);
-            if (($("#valb").val() != '') && ($("#vala").val() != '')) {
-                $.ajax({
+            if (($("#valb").val() != '') && ($("#vala").val() != ''))
+            {
+                $.ajax({ 
                     type: "POST",
                     url: 'calculate.php',
                     data: $("#calc_form").serialize(),
                     success: function (data) {
                         $("#result").val(data);
                     }
+
                 });
-            }
-            else {
+            } else {
                 $(".error").html("**ENTER INPUT VALUES FIRST");
-            }
+            } 
         });
-    };
-    return calculatorClass;
-}());
+    }
+}

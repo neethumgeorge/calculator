@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "noImplicitAny": false,
+        "removeComments": false,
+        "preserveConstEnums": true,
+        "outFile": "../js/function.js",        
+        "target": "ES5",
+        "diagnostics": true,
+        "allowJs": true,
+        "compileOnSave":true
+    },
+    "files": [
+         "function.ts"
+    ]
+}
