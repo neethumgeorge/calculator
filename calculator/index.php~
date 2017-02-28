@@ -1,0 +1,41 @@
+<html>
+<head>
+<title>COLOR CALCULATOR</title>
+<link rel="stylesheet" type="text/css" href="inc/css/style.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="inc/js/jquery.js"
+        type="text/javascript"></script>
+</head>
+<form id="calc_form" class="bootstrap-frm" method="post" enctype="multipart/form-data">
+ <h1>Calculator 
+       
+    </h1>
+	<label>
+	  <span>Val1 :</span>
+<input type="text" name="val_a" id="vala" placeholder="INPUT 1">
+</label>
+	<label>
+	  <span>Val2 :</span>
+<input type="text" name="val_b" id="valb" placeholder="INPUT 2">
+</label>
+	<label>
+	  <span>Result :</span>
+<input type="text" name="result" id="result" placeholder="RESULT" readonly>
+<input type="hidden" name="opt" id="opt" value="">
+</label>
+	<label>
+	  <span> </span>
+<button type="button" class="btn btn-primary " data-opt="add">+</button>
+<button type="button" class="btn btn-primary" data-opt="sub">-</button>
+<button type="button" class="btn btn-primary" data-opt="mul">*</button>
+<button type="button" class="btn btn-primary" data-opt="div">/</button>
+</label>
+
+<span class="error"> </span>
+
+</form>
+</html>
+<script src="inc/js/function.js" type="text/javascript">
+
+</script>
