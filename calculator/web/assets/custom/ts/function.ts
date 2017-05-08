@@ -23,6 +23,10 @@ class calculatorClass {
                     data: $("#calc_form").serialize(),
                     success: function (data) {
                         $("#result").val(data);
+
+                    },
+                    error:function(){
+                       $(".error").html("**ENTER INPUT VALUES FIRST");
                     }
 
                 });
